@@ -1,4 +1,5 @@
 temperatures_file = 'results.txt'
+test_file = 'fake_results.txt'
 
 def get_extremes(file):
     try:
@@ -28,6 +29,8 @@ def get_extremes(file):
             res[first] = [coldest_years[0], hottest_years[0]]
             res[second] = [coldest_years[1], hottest_years[1]]
             res[third] = [coldest_years[2], hottest_years[2]]
+            for k, v in res.items():
+                print(str(k) + ' => ' + ', '.join(v))
             return res
     except NameError:
         return 'Name Error'
@@ -36,10 +39,6 @@ def get_extremes(file):
     except IOError:
         return 'IO Error'
 
-for k, v in (get_extremes(temperatures_file)).items():
-    value = ''
-    for element in v:
-        value += element
-        if v.index(element) < len(v) - 1:
-            value += ', '
-    print(str(k) + ' => ' + str(value))
+#unit test
+get_extremes(temperatures_file)
+get_extremes(test_file)
