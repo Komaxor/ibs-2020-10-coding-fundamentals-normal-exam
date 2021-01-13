@@ -1,5 +1,4 @@
 temperatures_file = 'results.txt'
-test_file = 'fake_results.txt'
 
 def get_extremes(file):
     try:
@@ -41,4 +40,6 @@ def get_extremes(file):
 
 #unit test
 get_extremes(temperatures_file)
-get_extremes(test_file)
+#test_file = 'fake_results.txt'
+#get_extremes(test_file)
+#print(get_extremes('nonexistent.txt'))
